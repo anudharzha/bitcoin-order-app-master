@@ -18,8 +18,7 @@ before_script:
   - npm install -g now
   
 script:
-  - ng lint
-  - ng build --prod --base-href https://anudharzha.github.io/bitcoin-order-app-master/
+   - ng build --prod --base-href https://anudharzha.github.io/bitcoin-order-app/
 
 deploy:
   provider: pages
