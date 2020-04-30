@@ -11,15 +11,14 @@ notifications:
     on_failure: always
 branches:
   only:
-   - master
+   - development
 
 before_script:
   - npm install -g @angular/cli
   - npm install -g now
   
 script:
-  - ng lint
-  - ng build --prod --base-href https://anudharzha.github.io/bitcoin-order-app-master/
+   - ng build --prod --base-href https://anudharzha.github.io/bitcoin-order-app-master/
 
 deploy:
   provider: pages
@@ -27,4 +26,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: dist/bitcoin
   on: 
-   branch: master
+   branch: development
