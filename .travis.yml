@@ -3,18 +3,23 @@ node_js:
   - node
 dist: bionic
 sudo: required
-
+notifications:
+  email:
+    recipients:
+      - anubala@ncs.com.sg
+    on_success: always
+    on_failure: always
 branches:
   only:
    - master
 
 before_script:
   - npm install -g @angular/cli
-  - npm audit fix
+  - npm install -g now
   
 script:
   - ng lint
-  - ng build --prod --base-href https://kenken64.github.io/bitcoin-order-app/
+  - ng build --prod --base-href https://anudharzha.github.io/bitcoin-order-app-master/
 
 deploy:
   provider: pages
